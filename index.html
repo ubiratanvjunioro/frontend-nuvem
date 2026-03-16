@@ -7,18 +7,15 @@
   <h1>Consumindo API da Nuvem</h1>
   <button onclick="buscar()">Buscar Mensagem</button>
   <pre id="resultado"></pre>
-  <script>
+ <script>
 async function buscar() {
   try {
     const resposta = await fetch("https://api-nuvem-1-i8p2.onrender.com");
     const dados = await resposta.json();
-
     document.getElementById("resultado").innerText =
       JSON.stringify(dados, null, 2);
-
   } catch (erro) {
-    document.getElementById("resultado").innerText =
-      "Erro ao buscar API: " + erro;
+    document.getElementById("resultado").innerText = "Erro: " + erro;
   }
 }
 </script>
